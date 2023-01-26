@@ -1,8 +1,11 @@
 local api = vim.api
+
 -- Map Leader as "Space"
 vim.g.mapleader = " "
+
 -- Set Searcher
 vim.keymap.set("n","<leader>pv",vim.cmd.Ex)
+
 -- Function for mapping
 local map = function(mode,lhs,rhs,opts)
 	local options = {noremap = true,silent=true}
@@ -12,7 +15,7 @@ local map = function(mode,lhs,rhs,opts)
 	api.nvim_set_keymap(mode,lhs,rhs,options)
 end
 
--- Create Mappings --
+------------------------------- Create Mappings -------------------------------------------------------------
 -- Disable arrows
 map('','<up>','<nop>')
 map('','<down>','<nop>')
@@ -24,3 +27,4 @@ map('','<ESC>','<nop>')
 
 -- Close inster mode with jk
 map('i','jk','<ESC>')
+
